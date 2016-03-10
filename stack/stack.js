@@ -11,13 +11,18 @@ stack.prototype = {
 	push: function(item) {
 		var length = this.length;
 		this[length] = item;
-		this.length ++;
+		this.length++;
 	},
 
-	pop: function(){
-	    var len = this.length;
-	    delete this[len];
-	    this.length --;	
+	pop: function() {
+		var len = this.length,
+		    item = this[len - 1];
+
+		delete this[len - 1];
+		
+		this.length--;
+
+		return item;
 	},
 
 	shift: function() {
@@ -26,14 +31,16 @@ stack.prototype = {
 			item = this[suffix];
 
 		delete this[suffix];
+
 		len = this.length -= 1;
 		start = this.top + 1;
 
-		while (start < len - 1) {
+		while (start < len + 1) {
 			this[start - 1] = this[start];
-			start ++;
+			start++;
 		}
 
+		delete this[len];
 
 		return item;
 	}
