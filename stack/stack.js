@@ -27,10 +27,10 @@ stack.prototype = {
 
 	shift: function() {
 		var start, len,
-			suffix = this.top,
-			item = this[suffix];
+			t = this.top,
+			item = this[t];
 
-		delete this[suffix];
+		delete this[t];
 
 		len = this.length -= 1;
 		start = this.top + 1;
