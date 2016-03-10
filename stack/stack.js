@@ -34,6 +34,7 @@ stack.prototype = {
 			start ++;
 		}
 
+
 		return item;
 	}
 }
