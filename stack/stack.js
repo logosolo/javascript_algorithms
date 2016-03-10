@@ -12,6 +12,7 @@ stack.prototype = {
 		var length = this.length;
 		this[length] = item;
 		this.length++;
+		return this;
 	},
 
 	pop: function() {
