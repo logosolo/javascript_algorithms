@@ -9,40 +9,33 @@ stack.prototype = {
 	},
 
 	push: function(item) {
-		var length = this.length;
-		this[length] = item;
+		var len = this.length;
+		this[len] = item;
 		this.length++;
 		return this;
 	},
 
 	pop: function() {
 		var len = this.length,
-		    item = this[len - 1];
+			item = this[len - 1];
 
-		delete this[len - 1];
-		
-		this.length--;
-
+		delete this[--this.length];
 		return item;
 	},
 
 	shift: function() {
-		var start, len,
-			t = this.top,
-			item = this[t];
+		var start = this.top + 1,
+			len = this.length,
+			item = this[this.top];
 
-		delete this[t];
-
-		len = this.length -= 1;
-		start = this.top + 1;
-
-		while (start < len + 1) {
+		delete this[this.top];
+      
+		while (start < len) {
 			this[start - 1] = this[start];
 			start++;
 		}
 
-		delete this[len];
-
+		delete this[--this.length];
 		return item;
 	}
 }
