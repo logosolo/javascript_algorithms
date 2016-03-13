@@ -45,6 +45,7 @@ stack.prototype = {
 			this[start - 1] = this[start];
 			start++;
 		}
+
 		delete this[--this.length];
 		this.top--;
 		return item;
