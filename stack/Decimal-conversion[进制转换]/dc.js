@@ -20,3 +20,19 @@ function convert(num, base) {
 }
 
 
+function mulBase(num, base){
+    var s = new stack(),
+        converted = "";
+    do{
+        s.push(num % base);
+        num = Math.floor(num /= base);
+
+    }while(num > 0);
+
+    while(s.length > 0){
+        converted += s.pop();
+    }
+
+    return converted;
+}
+
