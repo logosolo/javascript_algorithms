@@ -17,8 +17,12 @@ function convert(num, base) {
 		convert(molecule, base);
 	}
 
-}
+    while(molecule){
+        s.push(num % base);	
+        molecule = Math.floor(molecule /= base);
+    }
 
+}
 
 function mulBase(num, base){
     var s = new stack(),
