@@ -4,6 +4,12 @@ function bindaryTree(data, left, right) {
 	this.right = right;
 }
 
+bindaryTree.prototype = {
+    show: function() {
+		return this.data;
+	}
+}
+
 function initTree() {
 	this.root = null;
 }
@@ -37,10 +43,6 @@ initTree.prototype = {
 				}
 			}
 		}
-	},
-
-	show: function() {
-		return this.data;
 	},
 
 	inOrder: function(node) {
