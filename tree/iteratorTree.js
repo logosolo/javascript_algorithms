@@ -67,5 +67,21 @@ initTree.prototype = {
 			this.postOrder(node.right);
 			console.log(node.show());
 		}
+	},
+
+	getMin: function(){
+	    var current = this.root;
+	    while(current.left){
+            current = current.left;
+	    }	
+	    return current.data;
+	},
+
+	getMax: function(){
+	    var current = this.root;
+	    while(current.right){
+            current = current.right;
+	    }	
+	    return current.data;
 	}
 };
