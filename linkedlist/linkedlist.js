@@ -24,11 +24,19 @@ LList.prototype = {
 	},
 
 	remove: function(item) {
-        var current = this.find(item);
-        if(current.element){
-                     
+        var prevNode = this.findPrevious(item);
+        if(!(prevNode.next == null)){
+            prevNode.next = prevNode.next.next;                 
         }    
 	},
+
+    findPrevious: function(item){
+        var currNode = this.head;
+        while(!(currNode.next == null) && (currNode.next.element != item)){
+            currNode = currNode.next;	
+        }        
+        return currNode;
+    },
 
 	display: function() {
 		var currNode = this.head;
