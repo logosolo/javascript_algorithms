@@ -1,3 +1,4 @@
+//1 ~ n 的阶乘末尾0的个数
 function a(num) {
 	var result = 0;
 	for (var i = 1; i <= num; i++) {
