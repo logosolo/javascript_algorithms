@@ -8,7 +8,7 @@ function quickSort(start, end, arr) {
 		quickSort(q + 1, end, arr);
 	}
 }
-
+//the divide function 
 function partion(s, e, arr) {
 	var temp,
 		x = arr[s],
@@ -21,9 +21,10 @@ function partion(s, e, arr) {
 			arr[i] = temp;
 		}
 	}
+	//when sort program is done 
+	//exchange the x with the position f-1 of the arr
 	temp = arr[f - 1];
 	arr[f - 1] = arr[s];
 	arr[s] = temp;
-
 	return f - 1;
 }

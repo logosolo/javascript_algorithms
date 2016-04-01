@@ -15,7 +15,6 @@ DList.prototype = {
         newNode.prev = current;
         newNode.next = current.next;
     },
-
     remove: function(item){
         var currNode = this.find(item);
         if(!(currNode.next == null)){
@@ -24,6 +23,5 @@ DList.prototype = {
             currNode.prev = null;
         }
     }
-
 }
 
