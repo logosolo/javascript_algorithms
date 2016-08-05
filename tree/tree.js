@@ -12,7 +12,7 @@ function BST() {
 
 BST.prototype = {
     insert: function(data) {
-        var tree = new new tree(data);
+        var tree = new tree(data);
 
         if (this.root == null) {
             this.root = tree;
